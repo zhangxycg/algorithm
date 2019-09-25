@@ -32,17 +32,24 @@ public class BubbleSort {
 
         // 用冒泡排序算法对数组进行排序
         for (int i = 0; i < array.length - 1; i++) {
+            System.out.println("第" + (i + 1) + "趟");
+            // 优化冒泡排序，增加判断位
+            boolean flag = true;
             for (int j = 0; j < array.length - 1 - i; j++) {
                 int temp = 0;
                 if (array[j] > array[j + 1]) {
                     temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
+                    flag = false;
                 }
+                System.out.println(Arrays.toString(array));
+            }
+            // 说明上面内层for循环中，没有交换任何元素，直接退出
+            if (flag) {
+                break;
             }
         }
-
         System.out.println("排序后的数组：" + Arrays.toString(array));
-
     }
 }
