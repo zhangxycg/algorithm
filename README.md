@@ -1,2 +1,2 @@
-# test
-Java测试库
+# algorithm
+一些小算法
